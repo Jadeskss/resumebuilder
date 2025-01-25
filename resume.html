@@ -37,6 +37,7 @@
                         <div class = "cv-form-blk">
                             <div class = "cv-form-row-title">
                                 <h3>about section</h3>
+                                
                             </div>
                             <div class = "cv-form-row cv-form-row-about">
                                 <div class = "cols-3">
@@ -97,6 +98,7 @@
                         <div class="cv-form-blk">
                             <div class = "cv-form-row-title">
                                 <h3>achievements</h3>
+                                
                             </div>
 
                             <div class = "row-separator repeater">
@@ -262,7 +264,15 @@
                                 <button type = "button" data-repeater-create value = "Add" class = "repeater-add-btn">+</button>
                             </div>
                         </div>
-
+                        
+                        <div id="live-chat" onclick="toggleChat()">
+                            <img src="assets/images/customer-service.png" alt="Live Chat">
+                            <div class="chat-body">
+                                <div class="messages" id="chat-messages"></div>
+                                <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="sendMessage(event)">
+                            </div>
+                        </div>
+                    
                         <div class="cv-form-blk">
                             <div class = "cv-form-row-title">
                                 <h3>skills</h3>

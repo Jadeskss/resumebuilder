@@ -286,3 +286,51 @@ window.generatePDF = async function () {
         });
     }
 };
+
+
+
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const button = document.querySelector(`button[onclick="toggleSection('${sectionId}')"]`);
+    if (section.style.display === 'none') {
+        section.style.display = 'block';
+        button.textContent = 'Exclude';
+    } else {
+        section.style.display = 'none';
+        button.textContent = 'Include';
+    }
+}
+
+function toggleChat() {
+    const chatBody = document.querySelector('#live-chat .chat-body');
+    chatBody.style.display = chatBody.style.display === 'none' || chatBody.style.display === '' ? 'block' : 'none';
+}
+
+function sendMessage(event) {
+    if (event.key === 'Enter') {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+
+        if (message) {
+            const messagesContainer = document.getElementById('chat-messages');
+
+            // User message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'user';
+            userMessage.textContent = message;
+            messagesContainer.appendChild(userMessage);
+
+            // Admin response (simulated)
+            const adminMessage = document.createElement('div');
+            adminMessage.className = 'admin';
+            adminMessage.textContent = 'Thank you for reporting. We will get back to you shortly.';
+            messagesContainer.appendChild(adminMessage);
+
+            // Scroll to the bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // Clear input
+            input.value = '';
+        }
+    }
+}

@@ -547,6 +547,72 @@ textarea{
     display: block;
 }
 
+#live-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #f44336;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#live-chat img {
+    width: 30px;
+    height: 30px;
+}
+
+#live-chat .chat-body {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+}
+
+#live-chat .chat-body .messages {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#live-chat .chat-body .messages div {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#live-chat .chat-body .messages .user {
+    background: #f1f1f1;
+    text-align: right;
+}
+
+#live-chat .chat-body .messages .admin {
+    background: #e9ecef;
+}
+
+#live-chat .chat-body input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
 @media screen and (min-width: 768px){
     .cols-3{
         grid-template-columns: repeat(3, 1fr);
